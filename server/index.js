@@ -2,9 +2,10 @@ const express = require('express');
 
 const app = express();
 const bp = require('body-parser');
+const cors = require('cors');
 const db = require('./db/queries.js');
 
-app.use(bp.json());
+app.use(cors(), bp.json());
 
 app.get('/api/bugs', (req, res) => db.getAllBugs()
   .then((result) => res.send(result.rows))

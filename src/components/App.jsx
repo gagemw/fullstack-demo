@@ -28,9 +28,22 @@ class App extends React.Component {
   }
 
   addBug(bug){
-    this.setState({
-      bugs:[...this.state.bugs, bug]
+    fetch('http://localhost:3000/api/bugs', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(bug)
     })
+    .then(()=>{
+      this.componentDidMount()
+      })
+    }
+
+  componentDidMount(){
+    fetch('http://localhost:3000/api/bugs')
+    .then(response=> response.json())
+    .then(data=>this.setState({bugs:data}))
   }
 
   render() {
