@@ -25,17 +25,30 @@ class App extends React.Component {
         <Nav
           filterHandler={this.filterHandler}
         />
-        {this.state.bugs.map((bug) => (
-          <BugTile
-            bugName={bug.bugName}
-            bugDescription={bug.bugDescription}
-            reportedBy={bug.reportedBy}
-            createdDate={bug.createdDate}
-            assignedTo={bug.assignedTo}
-            threatLevel={bug.threatLevel}
-            key={bug.bugName}
-          />
-        ))}
+        {this.state.bugs.map((bug) => {
+          if(this.state.filter==='None'){
+            return <BugTile
+              bugName={bug.bugName}
+              bugDescription={bug.bugDescription}
+              reportedBy={bug.reportedBy}
+              createdDate={bug.createdDate}
+              assignedTo={bug.assignedTo}
+              threatLevel={bug.threatLevel}
+              key={bug.bugName}
+            />
+          }
+          else if(bug.threatLevel===this.state.filter){
+            return <BugTile
+              bugName={bug.bugName}
+              bugDescription={bug.bugDescription}
+              reportedBy={bug.reportedBy}
+              createdDate={bug.createdDate}
+              assignedTo={bug.assignedTo}
+              threatLevel={bug.threatLevel}
+              key={bug.bugName}
+            />
+          }
+        })}
       </table>
     );
   }
