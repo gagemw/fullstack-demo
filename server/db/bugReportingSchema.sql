@@ -11,10 +11,10 @@ create table bugs(
   "threatLevel" text
 );
 
-insert into bugs ("bugDescription","reportedBy","assignedTo","threatLevel") values 
-  ('Async Swim needs to be fixed, desperately.','Bailey','Teddi','Critical'),
-  ('Do you support the Phantom Thieves?','Jeff','Daniel','Low-Priority'),
-  ('Unit test #202200324 is failing on Jeffs computer','Daniel','Bailey','Low-Priority'),
-  ('Wax on','Bailey','Teddi','Important'),
-  ('Wax off','Bailey','Teddi','Important'),
-  ('Totally not a generic bug','Nick','Surj','Critical');
+insert into bugs ("bugDescription","reportedBy","assignedTo","threatLevel","createdDate") values 
+  ('Async Swim needs to be fixed, desperately.','Bailey','Teddi','Critical','01/05/2020'),
+  ('Do you support the Phantom Thieves?','Jeff','Daniel','Low-Priority','01/05/2020'),
+  ('Unit test #202200324 is failing on Jeff''s computer','Daniel','Bailey','Low-Priority','01/06/2020'),
+  ('Wax on','Bailey','Teddi','Important','01/06/2020'),
+  ('Wax off','Bailey','Teddi','Important','01/07/2020'),
+  ('Totally not a generic bug','Nick','Surj','Critical','01/07/2020');

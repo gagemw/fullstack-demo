@@ -45,7 +45,12 @@ class BugReporter extends React.Component {
             <td><input id="bugDescription" onChange={(e)=>{this.changeHandler(e)}}></input></td>
             <td><input id="reportedBy" onChange={(e)=>{this.changeHandler(e)}}></input></td>
             <td><input id="assignedTo" onChange={(e)=>{this.changeHandler(e)}}></input></td>
-            <td><input id="threatLevel" onChange={(e)=>{this.changeHandler(e)}}></input></td>
+            <td><select id="threatLevel" onChange={(e)=>{this.changeHandler(e)}}>
+              <option value="None"></option>
+              <option value="Low-Priority">Low-Priority</option>
+              <option value="Important">Important</option>
+              <option value="Critical">Critical</option>
+            </select></td>
           </tr>
         </tbody>
         <tfoot><tr><th onClick={()=>{this.props.addBug(this.state), this.clearState(), this.props.toggle()}}>Submit Bug</th></tr></tfoot>
