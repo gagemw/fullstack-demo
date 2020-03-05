@@ -31,7 +31,8 @@ class BugReporter extends React.Component {
   render(){
     if(this.props.show){
     return(
-      <table>
+      <div className="modal">
+      <table className="modal-main">
         <thead>
           <tr>
             <th>Description</th>
@@ -53,8 +54,15 @@ class BugReporter extends React.Component {
             </select></td>
           </tr>
         </tbody>
-        <tfoot><tr><th onClick={()=>{this.props.addBug(this.state), this.clearState(), this.props.toggle()}}>Submit Bug</th></tr></tfoot>
+        <td></td>
+        <tfoot>
+          <tr>
+            <th onClick={()=>{this.props.addBug(this.state), this.clearState(), this.props.toggle()}}>Submit Bug</th>
+            <th onClick={()=>{this.clearState(), this.props.toggle()}}>Cancel</th>
+          </tr>
+        </tfoot>
       </table> 
+      </div>
     )}
     return null;
   }
